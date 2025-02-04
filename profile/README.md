@@ -7,5 +7,3 @@
 ![StevenTCramer's GitHub stats](https://github-readme-stats.vercel.app/api?username=StevenTCramer&show_icons=true&theme=dark)
 
 ![Visitors since 2025-02-04](http://estruyf-github.azurewebsites.net/api/VisitorHit?user=TimeWarpEngineering&repo=TimeWarpEngineering&countColor=%237B1E7A)
-
-![TimeWarp Logo](https://raw.githubusercontent.com/TimeWarpEngineering/blazor-state/master/Assets/Logo.svg)
