@@ -23,3 +23,13 @@ Disposition: Delete both (abandoned parent sync mechanism). NOTE: this repo late
 ## Notes
 
 Created from timewarp-nuru 458-009/458 rollout session, 2026-08-08.
+
+## Results
+
+Both sync-configurable-files.* deleted (abandoned parent sync mechanism).
+Zero workflows remain — correct interim state until this repo hosts the org
+reusable workflow (458 Layer 1). Duplicate task 002 archived (filing race).
+
+### How to validate
+
+Smoke: `ls .github/workflows/` → empty. Expect: no sync files in repo.

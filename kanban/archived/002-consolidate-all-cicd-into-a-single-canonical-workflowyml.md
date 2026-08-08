@@ -20,3 +20,5 @@ Disposition: Delete both (abandoned parent sync mechanism). NOTE: this repo (.gi
 ## Notes
 
 Created from timewarp-nuru 458-009/458 rollout session, 2026-08-08.
+
+## Archived: duplicate of 001 (race between task-filing agents, 2026-08-08)
