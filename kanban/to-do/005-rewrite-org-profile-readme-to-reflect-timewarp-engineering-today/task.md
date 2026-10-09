@@ -134,3 +134,9 @@ Expect:
 
 - Created: Grok Bot executor (2026-10-09) on TWE-001
 - Implementation: Grok implementer (2026-10-09) on `task/005-rewrite-org-profile-readme-to-reflect-timewarp-eng`
+
+## Blocked
+
+2026-10-09: `ganda repo audit` fails 19 product-layout checks on TimeWarpEngineering/.github, including kebab-path-names on required profile/README.md. Unblocks: an audit exemption for this profile repo, or a host waiver of the audit gate on task 005, before audit --fix runs. https://github.com/TimeWarpEngineering/.github/tree/task/005-rewrite-org-profile-readme-to-reflect-timewarp-eng
+
+- https://github.com/TimeWarpEngineering/.github/tree/task/005-rewrite-org-profile-readme-to-reflect-timewarp-eng
