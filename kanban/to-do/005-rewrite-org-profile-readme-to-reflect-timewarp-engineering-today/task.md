@@ -50,13 +50,13 @@ and Ganda.
 
 ## Checklist
 
-- [ ] Research current org repos with `gh` (descriptions, stars, archived, pushedAt)
-- [ ] Read timewarp-ganda README and timewarp.software / timewarp.enterprises for wording
-- [ ] Rewrite `profile/README.md` (only file changed besides this kitchen)
-- [ ] Every listed repo verified public + live; every number matches `gh`
+- [x] Research current org repos with `gh` (descriptions, stars, archived, pushedAt)
+- [x] Read timewarp-ganda README and timewarp.software / timewarp.enterprises for wording
+- [x] Rewrite `profile/README.md` (only file changed besides this kitchen)
+- [x] Every listed repo verified public + live; every number matches `gh`
 - [ ] One PR for the change
 - [ ] Merge via `ganda pr merge`
-- [ ] Do not implement on `master`
+- [x] Do not implement on `master`
 
 ## Notes
 
@@ -68,6 +68,69 @@ and Ganda.
 
 ## Results
 
+Rewrote `profile/README.md` from the 2026-10-09 `gh repo list` snapshot. The page now says who the org is, lists each public original project that was pushed in 2026, and describes the agent workflow. Star counts and NuGet versions are shields.io badges, so the prose has no hard-coded counts.
+
+Included public, non-fork, non-archived repos (name, stars, pushedAt from `gh`):
+
+| Repo | Stars | Pushed |
+| --- | ---: | --- |
+| timewarp-state | 612 | 2026-10-09 |
+| timewarp-nuru | 114 | 2026-10-09 |
+| timewarp-architecture | 54 | 2026-10-09 |
+| timewarp-simple-icons | 30 | 2026-09-20 |
+| timewarp-heroicons | 23 | 2026-09-03 |
+| timewarp-amuru | 18 | 2026-10-07 |
+| timewarp-mediator | 15 | 2026-10-09 |
+| timewarp-fixie | 5 | 2026-09-21 |
+| timewarp-source-generators | 4 | 2026-09-20 |
+| timewarp-build-tasks | 3 | 2026-10-02 |
+| timewarp-multiavatar | 3 | 2026-09-03 |
+| timewarp-options-validation | 3 | 2026-09-03 |
+| timewarp-terminal | 2 | 2026-10-09 |
+| timewarp-flexbox | 1 | 2026-09-03 |
+| timewarp-jaribu | 1 | 2026-09-22 |
+| timewarp-quickbooks | 1 | 2026-10-09 |
+| timewarp-builder | 0 | 2026-09-03 |
+| timewarp-components | 0 | 2026-09-03 |
+
+One-line descriptions come from the repo description or the README. Empty GitHub descriptions use the README (Terminal, Amuru, Build.Tasks, Builder, Multiavatar, OptionsValidation, Flexbox, SourceGenerators). QuickBooks has no README; the line is the GitHub description, "Quickbooks Online integration". Architecture's GitHub description still says Tye and YARP; the profile uses the README (`dotnet new timewarp-architecture`) instead.
+
+Left out on purpose:
+
+- 60 private or archived repos. Ganda is private. The profile describes it and does not link the repository. No other private repository is named.
+- 73 public forks.
+- Public originals that are not current: `staruml-export-plantuml` (pushed 2023-04-11), `timewarp-source-code-generators` (2021-11-18), `UI-Layer` (2018-02-24).
+- `timewarp-blazor-cli`: `pushedAt` is 2026-05-18, but the default branch commit is 2022-01-23, the README is still a template, and there is no `kanban/` directory.
+- `timewarpengineering.github.io`: pushed 2026-09-03 for kanban chores. Its README is a copied State page and links `https://timewarp.ws/`, which returned HTTP 522. The profile uses that repo only for the logo PNG.
+
+Ganda wording follows `timewarp-ganda` `readme.md` and `source/timewarp-ganda/readme.md`. Those files say Ganda launches a coding-agent profile against a kanban task and that `ganda repo audit` is the repo gate. Profiles named there are `implementer-grok`, `implementer-opencode`, and `implementer-cursor`. They do not say Ganda tracks usage, and they do not say Ganda runs CI. "usage pick" in that README is a decision-model confidence column. The profile does not claim usage tracking or a CI gate.
+
+Agent evidence: every listed project has a `kanban/` directory. Org installations include the `claude`, `grok-by-xai`, and `cursor` GitHub apps. Recent commits on State, Nuru, Architecture, Amuru, Mediator, and Terminal include Claude or Grok co-authors. There is no separate bot user per repo; commits are authored by StevenTCramer.
+
+Discord invite `https://discord.gg/97tvbEr2AQ` still resolves (guild TheFreezeTeam, `expires_at` null). The X link is `https://x.com/StevenTCramer`, which matches the org `twitter_username` and timewarp.enterprises. The personal stats card, the Twitter follow badge, and the `http://` visitor counter are gone.
+
+PR open and `ganda pr merge` stay unchecked. Those are later host nodes. This walk did not run `gh pr create`, `ganda kanban done`, or a merge.
+
+The untracked `.gitignore` in the worktree (journal and oracle log patterns) was not committed. That file is hub task 003.
+
+### How to validate
+
+Smoke:
+
+```bash
+git diff origin/master -- profile/README.md
+rg -i 'wajenzi|huru|twitter\.com|github-readme-stats|estruyf|http://' profile/README.md
+```
+
+Expect:
+
+- The diff is the org profile rewrite. The only other product-adjacent edit is this kitchen file.
+- The `rg` command prints nothing.
+- The rendered page names Steven T. Cramer and links `https://timewarp.software/`, `https://timewarp.enterprises/`, `https://x.com/StevenTCramer`, and the Discord invite above.
+- Each project row links a repo in the table in this section. Shields badges show the star count and the NuGet version. The prose does not repeat those numbers.
+- Ganda is described and has no GitHub link.
+
 ## Session
 
 - Created: Grok Bot executor (2026-10-09) on TWE-001
+- Implementation: Grok implementer (2026-10-09) on `task/005-rewrite-org-profile-readme-to-reflect-timewarp-eng`
