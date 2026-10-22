@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/TimeWarpEngineering/timewarpengineering.github.io/master/images/LogoNoWordsOrShadow_64x64.png" alt="TimeWarp" height="64" />
 
-Steven T. Cramer's open source organization: .NET libraries, a distributed-application template, and the tools around them.
+TimeWarp Engineering builds open source .NET libraries, a distributed-application template, and the tools around them.
 
 [TimeWarp Enterprises LLC](https://timewarp.enterprises/) is the consulting practice. Every published package is catalogued at [timewarp.software](https://timewarp.software/packages/).
 
